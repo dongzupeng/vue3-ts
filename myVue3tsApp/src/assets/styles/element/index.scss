@@ -1,2 +1,19 @@
-// element-plus 全局配置（本文相关核心代码）
-@import './element-plus.scss';
+// 此文件路径：/src/styles/element-plus.scss
+// 配置 Element Plus 主题色
+@forward "element-plus/theme-chalk/src/common/var.scss" with ($colors: (
+    "primary": ("base": #6745ec), 
+    "success": ("base": #71d46f), 
+    "warning": ("base": #e6a23c), 
+    "danger": ("base": #e34d59), 
+    "error": ("base": #e34d59), 
+    "info": ("base": #e7e7e7)
+));
+// 上面不生效则使用下面配置
+:root {
+  --el-color-primary: #6745ec;
+  --el-color-success: #71d46f;
+  --el-color-warning: #e6a23c;
+  --el-color-danger: #e34d59;
+  --el-color-error: #e34d59;
+  --el-color-info: #e7e7e7;
+}

@@ -16,7 +16,7 @@
                     />
             </el-select>
         </div>
-        <div style="min-height: 400px; height: 500px">
+        <div style="min-height: 300px; height: 500px">
             <el-auto-resizer>
                 <template #default="{ height, width }">
                     <el-table-v2 :columns="columns" :data="data" :width="width" :height="height" fixed >
