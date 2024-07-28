@@ -1,4 +1,7 @@
 import axios from 'axios';
+// 添加消息提示
+import { ElMessage } from 'element-plus'
+
 
 // 创建 Axios 实例
 const instance = axios.create({
@@ -17,6 +20,10 @@ instance.interceptors.request.use(
     return config;
   },
   (error) => {
+    ElMessage({
+      message: error,
+      type: 'error',
+    })
     return Promise.reject(error);
   }
 );
@@ -29,10 +36,18 @@ instance.interceptors.response.use(
       // 处理错误情况
       return Promise.reject(new Error('请求失败'));
     }
+    ElMessage({
+      message: response.data.msg,
+      type: 'success',
+    })
     return response.data;
   },
   (error) => {
     // 处理网络错误等情况
+    ElMessage({
+      message: error,
+      type: 'error',
+    })
     return Promise.reject(error);
   }
 );

@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts" setup>
-import { getRequest, postRequest } from '@/request';
+import { getRequest } from "@/request";
 import { ref } from "vue"
 const value = ref('')
 const options = [
@@ -62,7 +62,7 @@ const options = [
     label: 'GATE',
   }
 ]
-const data = ref([
+let data = ref([
     {
         "id": "66a530a84fadea117fe443bd", //ID
         "symbol": "BOME_USDT", //币种
@@ -363,17 +363,17 @@ const columns = [
 ]
 const getData = () => {
     getRequest('/symbol/page')
-        .then((data) => {
+        .then((res) => {
             // 处理响应数据
-            if (data.code === 200) {
-                data = data.data.items
-            }
+            // if (res.msg === 'success') {
+            //     data = res.data.items
+            // }
         })
         .catch((error) => {
             // 处理错误
         });
 }
-// getData()
+getData()
 </script>
 
 <style lang="scss" scoped></style>
