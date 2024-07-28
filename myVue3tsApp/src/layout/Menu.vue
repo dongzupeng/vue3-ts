@@ -30,6 +30,10 @@ const handleSelect = (key: string, keyPath: string[]) => {
 
 <style lang="scss" scoped>
 .el-menu-demo {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
   height: 80px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .0);
   img {

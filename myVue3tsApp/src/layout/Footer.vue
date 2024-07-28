@@ -12,8 +12,12 @@ const time = ref(new Date().getFullYear())
 
 <style lang="scss" scoped>
 .footer {
+    position: fixed;
+    bottom: -50px;
     width: 100%;
     height: 100px;
     text-align: center;
+    font-size: 14px;
+    z-index: -1;
 }
 </style>

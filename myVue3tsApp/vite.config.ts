@@ -56,6 +56,12 @@
        port: 8848,
        host: '0.0.0.0',
        // 本地跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
-       proxy: {}
+       proxy: {
+         '/api': {
+           target: 'http://192.168.3.4:8080',
+           changeOrigin: true,
+           rewrite: (path) => path.replace(/^\/api/, '')
+         }
+       }
      }
    });
